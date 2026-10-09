@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startRoles = () => {
       if (!document.querySelector('.text')) return;
       new Typed('.text', {
-        strings: ['Web Designer', 'Vibe Coder',],
+        strings: ['Frontend Developer', 'YouTuber', 'Web Developer'],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
