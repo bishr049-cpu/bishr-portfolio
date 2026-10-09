@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0F2E">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="description" content="Muhammed Bishr — BA English graduate, Islamic postgraduate scholar, language enthusiast and aspiring AI/IT professional.">
+  <title>Muhammed Bishr | 3D Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Playfair+Display:ital,wght@0,500..800;1,500..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 3D Kinetic Canvas Background -->
+  <canvas id="threeCanvas" class="three-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom Multi-Style 3D Cursor -->
+  <div id="cursorTrailing" class="cursor-trailing" aria-hidden="true">
+    <span id="cursorLabel" class="cursor-label"></span>
+  </div>
+  <div id="cursorDot" class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <header class="nav" id="mainNav">
+    <div class="navin">
+<a class="logo" href="#home"><span class="logo-m">M</span><span class="logo-b">B</span><span class="logo-dot">'</span></a>
+ <nav class="links" id="navLinks" aria-label="Primary">
+        <a href="#about" data-cursor="ABOUT">About</a>
+        <a href="#languages" data-cursor="LANGS">Languages</a>
+        <a href="#education" data-cursor="STUDIES">Education</a>
+        <a href="#skills" data-cursor="SKILLS">Skills</a>
+        <a href="#projects" data-cursor="WORK">Projects</a>
+        <a href="#gallery" data-cursor="PHOTOS">Gallery</a>
+        <a href="#achievements" data-cursor="AWARDS">Achievements</a>
+        <a href="#leadership" data-cursor="LEAD">Leadership</a>
+        <a href="#contact" data-cursor="TALK">Contact</a>
+      </nav>
+
+      <div class="navright">
+        <!-- Theme Toggle -->
+        <button class="themebtn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle Theme" data-cursor="THEME">
+          <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+
+        <a href="#contact" class="btn btn-gold btn-sm nav-cta" data-cursor="LET'S TALK">Let's Talk</a>
+        <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><i></i><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="lattice" aria-hidden="true"></div>
+      <div class="wrap herogrid">
+        <div class="herotext reveal">
+          <div class="eyebrow"><span class="ping-dot"></span> Student · Multilingual Scholar · Aspiring AI Professional</div>
+<h1>
+  <span class="hero-hi"></span>
+  <span class="hero-im"></span><em class="hero-name"></em>
+</h1>
+          <h3 class="hero-role">I'm a <span class="text"></span></h3>
+          <p class="intro">Enthusiastic graduate and postgraduate researcher synthesizing classical language studies with contemporary Artificial Intelligence. Advancing fluency across English, Arabic, Turkish, and Urdu while engineering AI-assisted digital workflows.</p>
+
+      <div class="actions">
+            <a class="btn btn-gold" href="#education" data-cursor="JOURNEY">Explore Journey &darr;</a>
+            <a class="btn btn-outline" href="#contact" data-cursor="TALK">Get In Touch</a>
+          </div>
+          <div class="proof-strip">
+            <div class="proof-item">
+              <span class="proof-val">4</span>
+              <span class="proof-lbl">Languages Active</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-val gold">4×</span>
+              <span class="proof-lbl">Speech 1st Prize</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-val blue">100%</span>
+              <span class="proof-lbl">Curiosity & Growth</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="herophoto reveal delay">
+          <div class="hero-3d-rig" id="heroRig">
+            <div class="orbit-ring-1" aria-hidden="true"></div>
+            <div class="orbit-ring-2" aria-hidden="true"></div>
+            <div class="photo card-tilt" data-cursor="BISHR">
+              <img src="ChatGPT Image Sep 14, 2026, 03_50_44 PM.png" alt="Muhammed Bishr" id="heroImg">
+            </div>
+            <div class="badge-3d badge-top" data-cursor="DEGREE">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div><strong>BA English</strong><small>Graduate</small></div>
+            </div>
+            <div class="badge-3d badge-bottom" data-cursor="STUDIES">
+              <span class="live-beacon"></span>
+              <div><strong>Islamic Studies PG</strong><small>Fath-hul Fathah College</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll" href="#about" data-cursor="SCROLL">Scroll Down &darr;</a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Background & Purpose</p>
+          <h2>A learner across<br><em>many disciplines.</em></h2>
+        </div>
+        <div class="aboutgrid">
+          <div class="reveal delay">
+            <p class="lead">"Connecting the depth of classical literature and spirituality with the frontier of Artificial Intelligence."</p>
+            <p>I have completed my BA in English and am currently pursuing postgraduate Islamic studies at Fath-hul Fathah Islamic College in Athipatta, Valanchery, focusing on Tasavvuf under the guidance of Athipatta Usthad.</p>
+            <p>I am also planning prospective postgraduate studies in English, building further on the language, literature and communication foundation from my BA. My passions span public speaking, translation, research, and emerging AI tools.</p>
+            <p class="goal-highlight">Long-term Goal: Build a distinguished career as an IT professional specializing in Artificial Intelligence.</p>
+          </div>
+          <div class="qualities">
+            <div class="quality card-tilt reveal" data-cursor="EXPLORE">
+              <span class="qnum">01</span>
+              <div class="q-icon"><i class="fa-solid fa-earth-americas"></i></div>
+              <h3>Languages</h3>
+              <p>English · Arabic · Turkish · Urdu with structured LSRW pedagogy.</p>
+            </div>
+            <div class="quality card-tilt reveal delay" data-cursor="EXPLORE">
+              <span class="qnum">02</span>
+              <div class="q-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <h3>Communication</h3>
+              <p>4-time speech 1st prize winner, academic debate & rhetoric.</p>
+            </div>
+            <div class="quality card-tilt reveal" data-cursor="EXPLORE">
+              <span class="qnum">03</span>
+              <div class="q-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3>Digital & AI Skills</h3>
+              <p>AI Video creation, Tally Essential, MS Office & web basics.</p>
+            </div>
+            <div class="quality card-tilt reveal delay" data-cursor="EXPLORE">
+              <span class="qnum">04</span>
+              <div class="q-icon"><i class="fa-solid fa-users"></i></div>
+              <h3>Leadership</h3>
+              <p>English Club Chairman · LSRW WhatsApp learning circle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LANGUAGES ============ -->
+    <section id="languages" class="section sand">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Linguistics</p>
+          <h2>Speaking across<br><em>cultures & contexts.</em></h2>
+        </div>
+        <div class="langgrid">
+          <div class="langcard card-tilt reveal" data-cursor="LISTEN">
+            <span class="langinit">En</span>
+            <div class="langtop"><span class="badge badge-gold">B1 Level</span></div>
+            <h3>English</h3>
+            <p>Core degree foundation, academic analysis, and daily research communication.</p>
+            <div class="lang-audio-row">
+              <small>"Clear communication bridges diverse minds."</small>
+              <button class="voice-btn" onclick="speakText('Clear communication bridges diverse minds.', 'en-US')" title="Listen"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+          </div>
+
+          <div class="langcard card-tilt reveal delay" data-cursor="LISTEN">
+            <span class="langinit">Ar</span>
+            <div class="langtop"><span class="badge">Developing</span></div>
+            <h3>Arabic</h3>
+            <p>Classical Islamic studies, Risala research, translation, and speech competition.</p>
+            <div class="lang-audio-row">
+              <small>العلم نور يهدي إلى الحق واليقين</small>
+              <button class="voice-btn" onclick="speakText('العلم نور يهدي إلى الحق واليقين', 'ar-SA')" title="Listen"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+          </div>
+
+          <div class="langcard card-tilt reveal" data-cursor="LISTEN">
+            <span class="langinit">Tr</span>
+            <div class="langtop"><span class="badge badge-gold">A2 / B1 Level</span></div>
+            <h3>Turkish</h3>
+            <p>Attained through dedicated study with a native Turkish educator from Türkiye.</p>
+            <div class="lang-audio-row">
+              <small>"Bir lisan bir insan, iki lisan iki insan."</small>
+              <button class="voice-btn" onclick="speakText('Bir lisan bir insan, iki lisan iki insan.', 'tr-TR')" title="Listen"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+          </div>
+
+          <div class="langcard card-tilt reveal delay" data-cursor="LISTEN">
+            <span class="langinit">Ur</span>
+            <div class="langtop"><span class="badge">Developing</span></div>
+            <h3>Urdu</h3>
+            <p>Peer study, literary readings, and LSRW WhatsApp student community practice.</p>
+            <div class="lang-audio-row">
+              <small>ادب اور زبان سوچ کے دریچے کھولتی ہے۔</small>
+              <button class="voice-btn" onclick="speakText('ادب اور زبان سوچ کے دریچے کھولتی ہے', 'ur-PK')" title="Listen"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section dark">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Academic Track</p>
+          <h2>My academic<br><em>journey & horizon.</em></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item card-tilt reveal" data-cursor="INSPECT">
+            <div class="t-node">01</div>
+            <div class="t-content">
+              <div class="t-tag completed"><i class="fa-solid fa-check"></i> Completed</div>
+              <h3>Bachelor of Arts in English</h3>
+              <p>Undergraduate degree establishing mastery in literary critique, communicative rhetoric, academic writing, and stylistic analysis.</p>
+            </div>
+          </article>
+          <article class="timeline-item card-tilt reveal delay" data-cursor="INSPECT">
+            <div class="t-node">02</div>
+            <div class="t-content">
+              <div class="t-tag current"><i class="fa-solid fa-clock"></i> Current Postgraduate</div>
+              <h3>Fath-hul Fathah Islamic College</h3>
+              <small><i class="fa-solid fa-location-dot"></i> Athipatta, Valanchery</small>
+              <p>Advanced postgraduate Islamic studies and Risala research with deep grounding in Tasavvuf (spiritual purification) under Athipatta Usthad.</p>
+            </div>
+          </article>
+          <article class="timeline-item card-tilt reveal" data-cursor="INSPECT">
+            <div class="t-node">03</div>
+            <div class="t-content">
+              <div class="t-tag horizon"><i class="fa-solid fa-compass"></i> Next Academic Goal</div>
+<h3>MA in English</h3>
+<p>Planning to pursue a postgraduate degree in English language and literature, building directly on my BA in English.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Tools I use,<br><em>skills I'm mastering.</em></h2>
+        </div>
+        <div class="skillgrid">
+          <div class="skillcard card-tilt reveal" data-cursor="SKILLS">
+            <div class="skilltop">
+              <h3>Communication & Languages</h3>
+              <span class="badge">Bilingual & Speech</span>
+            </div>
+            <p>Practical oratory and translation, paired with four languages at various progressive benchmarks.</p>
+            <div class="chips">
+              <span>Public Speaking (95%)</span>
+              <span>English Rhetoric (85%)</span>
+              <span>Arabic Translation (80%)</span>
+              <span>Turkish A2/B1 (75%)</span>
+              <span>Urdu LSRW (70%)</span>
+            </div>
+          </div>
+          <div class="skillcard card-tilt reveal delay" data-cursor="SKILLS">
+            <div class="skilltop">
+              <h3>Productivity & Operations</h3>
+              <span class="badge badge-gold">Practical & Certified</span>
+            </div>
+            <p>Certified operational accounting and rapid document handling with high typing accuracy.</p>
+            <div class="chips">
+              <span>Data Entry & Typing</span>
+              <span>Tally Essential</span>
+              <span>Manual Accounting</span>
+              <span>MS Office Suite</span>
+            </div>
+          </div>
+          <div class="skillcard card-tilt reveal" data-cursor="SKILLS">
+            <div class="skilltop">
+              <h3>Creative & AI Technologies</h3>
+              <span class="badge">Frontier</span>
+            </div>
+            <p>Hands-on experimentation with text-to-video, prompt engineering, and digital workflows.</p>
+            <div class="chips">
+              <span>AI Video Generation</span>
+              <span>Prompt Design</span>
+              <span>HTML & CSS Basics</span>
+              <span>Photoshop Basics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section sand">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Applied Work</p>
+          <h2>Learning through<br><em>rigorous doing.</em></h2>
+        </div>
+        <div class="projects-bento">
+          <div class="project-card featured card-tilt reveal" data-cursor="VIEW AI">
+            <div class="p-num">01</div>
+            <div class="p-info">
+              <span class="p-badge">Creative AI & Video</span>
+              <h3>AI-Generated Video & Media Production</h3>
+              <p>An innovative experimental project exploring prompt engineering, neural motion coherence, and generative video pipelines to streamline modern digital narratives.</p>
+              <div class="chips">
+                <span>AI Video Models</span><span>Prompt Architecture</span><span>Motion Synthesis</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card card-tilt reveal" data-cursor="INSPECT">
+            <div class="p-num">02</div>
+            <span class="p-badge">Academic</span>
+            <h3>Undergraduate Research Portfolio</h3>
+            <p>Academic dissertations, presentations, and rhetorical analyses developed during BA English studies.</p>
+          </div>
+          <div class="project-card card-tilt reveal delay" data-cursor="INSPECT">
+            <div class="p-num">03</div>
+            <span class="p-badge">Islamic Hermeneutics</span>
+            <h3>Risala Scholarly Research</h3>
+            <p>Classical treatise manuscript and source validation conducted as part of postgraduate Islamic studies.</p>
+          </div>
+          <div class="project-card card-tilt reveal" data-cursor="INSPECT">
+            <div class="p-num">04</div>
+            <span class="p-badge">Linguistics</span>
+            <h3>English ↔ Turkish Translation</h3>
+            <p>Contrastive syntactic exercises and bilingual vocabulary mapping developed with native Turkish mentorship.</p>
+          </div>
+          <div class="project-card card-tilt reveal delay" data-cursor="INSPECT">
+            <div class="p-num">05</div>
+            <span class="p-badge">Leadership</span>
+            <h3>LSRW WhatsApp Study Initiative</h3>
+            <p>Daily collaborative peer network for students practicing English, Arabic, and Urdu.</p>
+          </div>
+          <div class="project-card card-tilt reveal" data-cursor="INSPECT">
+            <div class="p-num">06</div>
+            <span class="p-badge">Practical</span>
+            <h3>Financial & Data Operations</h3>
+            <p>High-accuracy data entry, verified ledger reconciliation, and fast keyboard output benchmarks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="section">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Visual Chronicle</p>
+          <h2>Photos &<br><em>milestones.</em></h2>
+        </div>
+        <div class="gallery-controls">
+          <button id="galPrev" class="ctrl-btn" data-cursor="PREV" aria-label="Previous image"><i class="fa-solid fa-arrow-left"></i></button>
+          <button id="galNext" class="ctrl-btn" data-cursor="NEXT" aria-label="Next image"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="galleryviewport" id="galleryViewport">
+        <div class="gallerytrack" id="galleryTrack">
+          <div class="galleryitem card-tilt" data-cursor="VIEW">
+            <img src="Gemini_Generated_Image_cn9cmpcn9cmpcn9c.png" alt="Academic Reflection">
+            <div class="gal-info">
+              <h4>Academic & Linguistic Reflection</h4>
+              <small>Fath-hul Fathah Islamic College</small>
+            </div>
+          </div>
+          <div class="galleryitem card-tilt" data-cursor="VIEW">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=700&q=80" alt="Technology and AI Setup">
+            <div class="gal-info">
+              <h4>Technology & AI Workspace</h4>
+              <small>Digital Innovation</small>
+            </div>
+          </div>
+          <div class="galleryitem card-tilt" data-cursor="VIEW">
+            <img src="photo2.jpg" alt="Muhammed Bishr, seated portrait with headscarf">
+            <div class="gal-info">
+              <h4>Muhammed Bishr P</h4>
+              <small>BA English Graduate</small>
+            </div>
+          </div>
+          <div class="galleryitem card-tilt" data-cursor="VIEW">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=700&q=80" alt="Generative Media AI Project">
+            <div class="gal-info">
+              <h4>AI Generative Storytelling</h4>
+              <small>Video & Prompt Engineering</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS & CERTIFICATES ============ -->
+    <section id="achievements" class="section dark">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <p class="eyebrow">Milestones</p>
+          <h2>Honors &<br><em>verified credentials.</em></h2>
+        </div>
+        <div class="achievements">
+          <div class="achievement card-tilt reveal" data-cursor="HONOR">
+            <span class="aicon">🏆</span>
+            <h3>1st Place — Arabic Speech (4×)</h3>
+            <p>Four-time champion in college-level Arabic public speaking competitions.</p>
+          </div>
+          <div class="achievement card-tilt reveal delay" data-cursor="HONOR">
+            <span class="aicon">🏅</span>
+            <h3>Class Rank Holder</h3>
+            <p>Maintained top decile academic performance across examinations.</p>
+          </div>
+          <div class="achievement card-tilt reveal" data-cursor="HONOR">
+            <span class="aicon">🎭</span>
+            <h3>College Arts Festival</h3>
+            <p>Honored with distinctions in intercollegiate literary and debate activities.</p>
+          </div>
+          <div class="achievement card-tilt reveal delay" data-cursor="HONOR">
+            <span class="aicon">🇹🇷</span>
+            <h3>Turkish B1 Attainment</h3>
+            <p>Certified Turkish study completed with native instructor from Türkiye.</p>
+          </div>
+        </div>
+
+        <div class="cert-box reveal">
+          <div class="cert-head">
+            <span>Verified Diplomas & Accreditations</span>
+            <small>Click to inspect credential</small>
+          </div>
+          <div class="cert-grid">
+            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified')" data-cursor="CERT">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <div>
+                <strong>Tally Essential</strong>
+                <small>Financial Accounting & Ledgers</small>
+              </div>
+            </a>
+            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages')" data-cursor="CERT">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <div>
+                <strong>English &rarr; Arabic Translation</strong>
+                <small>Cross-Lingual Proficiency</small>
+              </div>
+            </a>
+            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council')" data-cursor="CERT">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <div>
+                <strong>Manual Accounting</strong>
+                <small>Double-Entry Bookkeeping</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEADERSHIP ============ -->
+    <section id="leadership" class="section">
+      <div class="wrap twocol">
+        <div class="reveal">
+          <p class="eyebrow">Leadership</p>
+          <h2>Leading language<br><em>learning circles.</em></h2>
+          <div class="union-box">
+            <h4>Chairman — English Club</h4>
+            <p>College Students' Union</p>
+            <small>Facilitating public speech clinics, literary seminars, and communicative forums.</small>
+          </div>
+        </div>
+        <div class="reveal delay">
+          <p class="lead">LSRW Peer Acquisition Architecture</p>
+          <p>Organized a collaborative WhatsApp community for students acquiring English, Arabic, and Urdu following natural cognitive acquisition:</p>
+          <div class="lsrw-grid">
+            <div class="lsrw-step card-tilt" data-cursor="STEP">
+              <span class="step-num">01</span>
+              <strong>Listen</strong>
+              <small>Daily audio immersion</small>
+            </div>
+            <div class="lsrw-step card-tilt" data-cursor="STEP">
+              <span class="step-num">02</span>
+              <strong>Speak</strong>
+              <small>60s voice prompts</small>
+            </div>
+            <div class="lsrw-step card-tilt" data-cursor="STEP">
+              <span class="step-num">03</span>
+              <strong>Read</strong>
+              <small>Curated bilingual text</small>
+            </div>
+            <div class="lsrw-step card-tilt" data-cursor="STEP">
+              <span class="step-num">04</span>
+              <strong>Write</strong>
+              <small>Micro-journaling</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FUTURE GOAL ============ -->
+    <section class="future section">
+      <div class="wrap center reveal">
+        <p class="eyebrow">Next Chapter</p>
+        <h2>Building a high-impact future in<br><em>Artificial Intelligence.</em></h2>
+        <p class="future-desc">Currently expanding in AI tools, neural video production, and digital architecture, aiming for an impactful career as an IT professional specializing in AI.</p>
+        <div class="path-card card-tilt" data-cursor="TRAJECTORY">
+          <span>Languages</span><i>&rarr;</i>
+          <span>Communication</span><i>&rarr;</i>
+          <span>Digital Skills</span><i>&rarr;</i>
+          <span>AI Systems</span><i>&rarr;</i>
+          <b>IT Career Specialist</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section sand">
+      <div class="wrap twocol">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's connect &<br><em>collaborate.</em></h2>
+          <p class="lead" style="margin-top:14px;">Open to academic research, language initiatives, AI project explorations, and technology opportunities.</p>
+          <div class="contact-stack">
+            <div class="c-item card-tilt" data-cursor="EMAIL">
+              <span><i class="fa-solid fa-envelope"></i> Email</span>
+              <a href="mailto:bishrpottikkallu@gmail.com">bishrpottikkallu@gmail.com &nearr;</a>
+            </div>
+            <div class="c-item card-tilt" data-cursor="CALL">
+              <span><i class="fa-solid fa-phone"></i> Phone</span>
+              <a href="tel:+918848160877">+91 88481 60877 &nearr;</a>
+            </div>
+            <div class="c-item card-tilt" data-cursor="LINKEDIN">
+              <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener">Bishr Pottikkallu &nearr;</a>
+            </div>
+            <div class="c-item card-tilt" data-cursor="INSTA">
+              <span><i class="fa-brands fa-instagram"></i> Instagram</span>
+              <a href="https://www.instagram.com/bissh.r/" target="_blank" rel="noopener">@bissh.r &nearr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal delay">
+          <form class="contactform card-tilt" id="contactForm" action="https://formspree.io/f/xrpbbzqk" method="POST" data-cursor="MESSAGE">
+            <h3 style="margin-bottom:12px;">Send Direct Message</h3>
+            <label>Name<input type="text" name="name" required placeholder="Your Name"></label>
+            <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+            <label>Message<textarea name="message" rows="4" required placeholder="Write your message..."></textarea></label>
+            <button type="submit" class="btn btn-gold" data-cursor="SEND">Transmit Message &rarr;</button>
+            <p class="formnote" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 3D Cursor Mode Floating Dock -->
+  <aside class="cursor-dock" id="cursorDock">
+    <div class="dock-title"><span class="dock-dot"></span> Cursor</div>
+    <button class="dock-btn active" data-style="orb" onclick="setCursorStyle('orb')">Orb</button>
+    <button class="dock-btn" data-style="magnetic" onclick="setCursorStyle('magnetic')">Cyber</button>
+    <button class="dock-btn" data-style="crosshair" onclick="setCursorStyle('crosshair')">Cross</button>
+    <button class="dock-btn" data-style="minimal" onclick="setCursorStyle('minimal')">Dot</button>
+  </aside>
+
+  <!-- Certificate Hologram Modal -->
+  <div id="certModal" class="modal-backdrop" onclick="closeCert()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeCert()">&times;</button>
+      <div class="modal-badge"><i class="fa-solid fa-shield-halved"></i> Verified Credential</div>
+      <h3 id="certModalTitle">Certificate Title</h3>
+      <p id="certModalField" class="modal-field">Field</p>
+      <div class="modal-desc" id="certModalIssuer">Issued by Authority</div>
+      <button class="btn btn-gold btn-sm" onclick="closeCert()" style="margin-top:16px;">Close Inspector</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <a class="logo" href="#home">Muhammed <span>Bishr</span></a>
+        <p>Student · Multilingual Scholar · Aspiring AI Professional</p>
+      </div>
+      <div class="footlinks">
+        <a href="mailto:bishrpottikkallu@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="tel:+918848160877"><i class="fa-solid fa-phone"></i> Phone</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/bissh.r/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <!-- Floating WhatsApp Button -->
+<div class="floating-social-wrapper">
+  <a href="https://www.instagram.com/bissh.r/" class="instagram-float" target="_blank" rel="noopener" aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/918848160877" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+      </div>
+      
+      <p class="copy">&copy; <span id="year"></span> Muhammed Bishr P. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
