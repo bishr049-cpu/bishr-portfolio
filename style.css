@@ -1127,3 +1127,16 @@ em {
 }
 .hero-role .text { color: var(--gold-bright); }
 .typed-cursor { color: var(--gold-bright); }
+
+
+/* ---- Gallery alignment fix (added) ---- */
+.gallerytrack {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding-left: max(32px, calc((100vw - var(--maxw)) / 2 + 32px));
+  padding-right: max(32px, calc((100vw - var(--maxw)) / 2 + 32px));
+}
+.galleryitem {
+  flex: 1 0 280px;   /* cards grow to fill the row, scroll only when they don't fit */
+  width: auto;
+}
