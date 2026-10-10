@@ -158,16 +158,46 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.scrollBy({ left: 320, behavior: 'smooth' });
   });
 
-  // 9. Certificate Inspection Modal
-  window.openCert = (title, field, issuer) => {
+  // 9. Certificate Inspection Modal (shows the certificate image; Esc closes it)
+  const certModal = document.getElementById('certModal');
+  const certImg = document.getElementById('certModalImg');
+  let certOpener = null;
+
+  window.openCert = (title, field, issuer, imgSrc) => {
+    if (!certModal) return true;   // popup missing: let the link open the image normally
     document.getElementById('certModalTitle').textContent = title;
     document.getElementById('certModalField').textContent = field;
     document.getElementById('certModalIssuer').textContent = `Accredited by: ${issuer}`;
-    document.getElementById('certModal').classList.add('open');
+    if (certImg) {
+      if (imgSrc) {
+        certImg.src = imgSrc;
+        certImg.alt = title;
+        certImg.hidden = false;
+      } else {
+        certImg.hidden = true;
+      }
+    }
+    certOpener = document.activeElement;
+    certModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const closeBtn = certModal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+    return false;                  // stops the link from navigating to the raw image
   };
+
   window.closeCert = () => {
-    document.getElementById('certModal').classList.remove('open');
+    if (!certModal) return;
+    certModal.classList.remove('open');
+    document.body.style.overflow = '';
+    if (certOpener && certOpener.focus) certOpener.focus();
+    certOpener = null;
   };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && certModal && certModal.classList.contains('open')) {
+      window.closeCert();
+    }
+  });
 
   // 10. Web Speech Audio Pronunciation
   window.speakText = (text, lang) => {
