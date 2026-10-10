@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B0F2E">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="description" content="Muhammed Bishr — BA English graduate, Islamic postgraduate scholar, language enthusiast and aspiring AI/IT professional.">
   <title>Muhammed Bishr | 3D Interactive Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,7 +92,7 @@
             <div class="orbit-ring-1" aria-hidden="true"></div>
             <div class="orbit-ring-2" aria-hidden="true"></div>
             <div class="photo card-tilt" data-cursor="BISHR">
-              <img src="ChatGPT Image Sep 14, 2026, 03_50_44 PM.png" alt="Muhammed Bishr" id="heroImg">
+              <img src="hero.png" alt="Muhammed Bishr" id="heroImg">
             </div>
             <div class="badge-3d badge-top" data-cursor="DEGREE">
               <i class="fa-solid fa-graduation-cap"></i>
@@ -365,7 +365,7 @@
       <div class="galleryviewport" id="galleryViewport">
         <div class="gallerytrack" id="galleryTrack">
           <div class="galleryitem card-tilt" data-cursor="VIEW">
-            <img src="Gemini_Generated_Image_cn9cmpcn9cmpcn9c.png" alt="Academic Reflection">
+            <img src="gallery-reflection.png" alt="Academic Reflection">
             <div class="gal-info">
               <h4>Academic & Linguistic Reflection</h4>
               <small>Fath-hul Fathah Islamic College</small>
@@ -432,21 +432,21 @@
             <small>Click to inspect credential</small>
           </div>
           <div class="cert-grid">
-            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="event.preventDefault(); openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified', this.getAttribute('href'))" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Tally Essential</strong>
                 <small>Financial Accounting & Ledgers</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="event.preventDefault(); openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages', this.getAttribute('href'))" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>English &rarr; Arabic Translation</strong>
                 <small>Cross-Lingual Proficiency</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="event.preventDefault(); openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council', this.getAttribute('href'))" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Manual Accounting</strong>
@@ -573,6 +573,7 @@
       <h3 id="certModalTitle">Certificate Title</h3>
       <p id="certModalField" class="modal-field">Field</p>
       <div class="modal-desc" id="certModalIssuer">Issued by Authority</div>
+      <a id="certModalLink" href="#" target="_blank" rel="noopener"><img id="certModalImg" class="modal-img" style="display:none" alt="Certificate image"></a>
       <button class="btn btn-gold btn-sm" onclick="closeCert()" style="margin-top:16px;">Close Inspector</button>
     </div>
   </div>

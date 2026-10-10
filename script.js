@@ -159,10 +159,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 9. Certificate Inspection Modal
-  window.openCert = (title, field, issuer) => {
+  window.openCert = (title, field, issuer, img) => {
     document.getElementById('certModalTitle').textContent = title;
     document.getElementById('certModalField').textContent = field;
     document.getElementById('certModalIssuer').textContent = `Accredited by: ${issuer}`;
+    const certImg = document.getElementById('certModalImg');
+    certImg.src = img || '';
+    certImg.style.display = img ? 'block' : 'none';
+    document.getElementById('certModalLink').href = img || '#';
     document.getElementById('certModal').classList.add('open');
   };
   window.closeCert = () => {
