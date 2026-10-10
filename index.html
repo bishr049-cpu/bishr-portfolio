@@ -432,21 +432,21 @@
             <small>Click to inspect credential</small>
           </div>
           <div class="cert-grid">
-            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="event.preventDefault(); openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified', this.getAttribute('href'))" data-cursor="CERT">
+            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="return openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified', 'tally-essential.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Tally Essential</strong>
                 <small>Financial Accounting & Ledgers</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="event.preventDefault(); openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages', this.getAttribute('href'))" data-cursor="CERT">
+            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="return openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages', 'translation-certificate.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>English &rarr; Arabic Translation</strong>
                 <small>Cross-Lingual Proficiency</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="event.preventDefault(); openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council', this.getAttribute('href'))" data-cursor="CERT">
+            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="return openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council', 'manual-accounting-certificate.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Manual Accounting</strong>
@@ -567,13 +567,13 @@
 
   <!-- Certificate Hologram Modal -->
   <div id="certModal" class="modal-backdrop" onclick="closeCert()">
-    <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeCert()">&times;</button>
       <div class="modal-badge"><i class="fa-solid fa-shield-halved"></i> Verified Credential</div>
       <h3 id="certModalTitle">Certificate Title</h3>
       <p id="certModalField" class="modal-field">Field</p>
+      <a id="certModalLink" href="#" target="_blank" rel="noopener"><img id="certModalImg" class="modal-img" alt="" hidden></a>
       <div class="modal-desc" id="certModalIssuer">Issued by Authority</div>
-      <a id="certModalLink" href="#" target="_blank" rel="noopener"><img id="certModalImg" class="modal-img" style="display:none" alt="Certificate image"></a>
       <button class="btn btn-gold btn-sm" onclick="closeCert()" style="margin-top:16px;">Close Inspector</button>
     </div>
   </div>
