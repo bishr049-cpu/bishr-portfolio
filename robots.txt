@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mubishr.netlify.app/sitemap.xml
+Sitemap: https://mubishr.vercel.app/sitemap.xml
