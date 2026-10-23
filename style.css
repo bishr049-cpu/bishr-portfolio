@@ -1150,3 +1150,6 @@ em {
   border: 1px solid var(--violet-line);
 }
 .modal-img[hidden] { display: none; }
+.btn-resume svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn-resume { border-color: var(--gold-bright) !important; }
+.btn-resume:hover { background: rgba(139, 156, 255, 0.14); }
