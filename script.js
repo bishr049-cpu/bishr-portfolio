@@ -223,6 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
         certImg.hidden = true;
       }
     }
+    const certLink = document.getElementById('certModalLink');
+    if (certLink) certLink.href = imgSrc || '#';
     certOpener = document.activeElement;
     certModal.classList.add('open');
     document.body.style.overflow = 'hidden';
