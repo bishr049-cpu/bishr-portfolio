@@ -1150,3 +1150,41 @@ em {
 .btn-resume svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .btn-resume { border-color: var(--gold-bright) !important; }
 .btn-resume:hover { background: rgba(139, 156, 255, 0.14); }
+
+/* ============================================================
+   ADDED: loading screen, scroll reveal, counters
+   ============================================================ */
+#page-loader{
+  position:fixed; inset:0; z-index:99999; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:26px;
+  background: var(--paper);
+  transition: opacity .6s ease, visibility .6s ease;
+}
+#page-loader.done{ opacity:0; visibility:hidden; pointer-events:none; }
+.pl-ring{
+  width:96px; height:96px; border-radius:50%; display:grid; place-items:center;
+  border:3px solid rgba(139,156,255,.2); border-top-color:var(--gold-bright);
+  animation: pl-spin 1s linear infinite;
+}
+.pl-logo{ font:800 28px/1 var(--sans); color:var(--gold-bright); letter-spacing:1px; animation: pl-spin-rev 1s linear infinite; }
+.pl-bar{ width:160px; height:3px; border-radius:3px; background:rgba(139,156,255,.2); overflow:hidden; }
+.pl-bar i{ display:block; height:100%; width:40%; border-radius:3px; background:linear-gradient(90deg,#5d6dff,#8b9cff); animation: pl-slide 1.2s ease-in-out infinite; }
+@keyframes pl-spin{ to{ transform:rotate(360deg);} }
+@keyframes pl-spin-rev{ to{ transform:rotate(-360deg);} }
+@keyframes pl-slide{ 0%{ transform:translateX(-100%);} 100%{ transform:translateX(400%);} }
+
+/* scroll reveal (uses the 'translate' property so it never fights the 3D tilt transform) */
+.js .reveal{ opacity:0; translate:0 32px; transition: opacity .8s ease, translate .8s ease; }
+.js .reveal.in{ opacity:1; translate:0 0; }
+.js .card-tilt.reveal{ transition: transform .12s ease-out, box-shadow .2s ease, border-color .2s ease, opacity .8s ease, translate .8s ease; }
+
+.count{ font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce){
+  .pl-ring,.pl-logo,.pl-bar i{ animation:none; }
+  .js .reveal{ opacity:1; translate:none; transition:none; }
+}
+
+/* hero buttons stay readable in light theme (hero is always dark) */
+.hero .btn-outline { color: #ffffff; }
+.hero .btn-outline:hover { color: var(--gold-bright); }

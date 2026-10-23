@@ -4,9 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B0F2E">
-  <link rel="icon" href="data:,">
-  <meta name="description" content="Muhammed Bishr — BA English graduate, Islamic postgraduate scholar, language enthusiast and aspiring AI/IT professional.">
-  <title>Muhammed Bishr | 3D Interactive Portfolio</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Muhammed Bishr | Aspiring AI Professional &amp; Multilingual Scholar</title>
+  <meta name="description" content="Muhammed Bishr - BA English graduate, Islamic postgraduate scholar, language enthusiast and aspiring AI/IT professional. View projects, resume and contact details.">
+  <meta name="author" content="Muhammed Bishr P">
+  <link rel="canonical" href="https://mubishr.netlify.app/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Link preview on WhatsApp / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Muhammed Bishr">
+  <meta property="og:title" content="Muhammed Bishr | Aspiring AI Professional &amp; Multilingual Scholar">
+  <meta property="og:description" content="BA English graduate, Islamic postgraduate scholar and aspiring AI/IT professional. See my projects and download my resume.">
+  <meta property="og:url" content="https://mubishr.netlify.app/">
+  <meta property="og:image" content="https://mubishr.netlify.app/photo2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhammed Bishr | Aspiring AI Professional">
+  <meta name="twitter:image" content="https://mubishr.netlify.app/photo2.jpg">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Muhammed Bishr P","url":"https://mubishr.netlify.app/","email":"mailto:bishrpottikkallu@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Malappuram","addressCountry":"IN"},"sameAs":["https://linkedin.com/in/bishr-pottikkallu-832274372","https://www.instagram.com/bissh.r/"],"jobTitle":"Aspiring AI & IT Professional","knowsLanguage":["English","Arabic","Turkish","Urdu"]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Playfair+Display:ital,wght@0,500..800;1,500..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,6 +33,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Loading screen -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="pl-ring"><span class="pl-logo">MB</span></div>
+    <div class="pl-bar"><i></i></div>
+  </div>
 
   <!-- 3D Kinetic Canvas Background -->
   <canvas id="threeCanvas" class="three-canvas" aria-hidden="true"></canvas>
@@ -74,15 +99,15 @@
           </div>
           <div class="proof-strip">
             <div class="proof-item">
-              <span class="proof-val">4</span>
+              <span class="proof-val"><span class="count" data-count="4">0</span></span>
               <span class="proof-lbl">Languages Active</span>
             </div>
             <div class="proof-item">
-              <span class="proof-val gold">4×</span>
+              <span class="proof-val gold"><span class="count" data-count="4" data-suffix="×">0</span></span>
               <span class="proof-lbl">Speech 1st Prize</span>
             </div>
             <div class="proof-item">
-              <span class="proof-val blue">100%</span>
+              <span class="proof-val blue"><span class="count" data-count="100" data-suffix="%">0</span></span>
               <span class="proof-lbl">Curiosity & Growth</span>
             </div>
           </div>
@@ -146,7 +171,7 @@
               <span class="qnum">04</span>
               <div class="q-icon"><i class="fa-solid fa-users"></i></div>
               <h3>Leadership</h3>
-              <p>English Club Chairman · LSRW WhatsApp learning circle.</p>
+              <p>Language Club Chairman · LSRW WhatsApp learning circle.</p>
             </div>
           </div>
         </div>
@@ -433,21 +458,21 @@
             <small>Click to inspect credential</small>
           </div>
           <div class="cert-grid">
-            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="return openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Tally Education / Academy Verified', 'tally-essential.jpg')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="tally-essential.jpg" onclick="return openCert('Tally Essential Accounting Certificate', 'Financial Accounting & ERP', 'Entri (online learning platform), 06 Feb 2025', 'tally-essential.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Tally Essential</strong>
                 <small>Financial Accounting & Ledgers</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="return openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'College Department of Languages', 'translation-certificate.jpg')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="translation-certificate.jpg" onclick="return openCert('English → Arabic Translation Distinction', 'Cross-Lingual Hermeneutics', 'United Skills Academy, Valanchery', 'translation-certificate.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>English &rarr; Arabic Translation</strong>
                 <small>Cross-Lingual Proficiency</small>
               </div>
             </a>
-            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="return openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Commerce & Accounting Council', 'manual-accounting-certificate.jpg')" data-cursor="CERT">
+            <a class="certlink card-tilt" href="manual-accounting-certificate.jpg" onclick="return openCert('Manual Accounting Principles', 'Bookkeeping & Ledgers', 'Multysense Edutech, Kollam (NSDC partner), Nov 2025', 'manual-accounting-certificate.jpg')" data-cursor="CERT">
               <i class="fa-solid fa-file-circle-check"></i>
               <div>
                 <strong>Manual Accounting</strong>
@@ -466,8 +491,8 @@
           <p class="eyebrow">Leadership</p>
           <h2>Leading language<br><em>learning circles.</em></h2>
           <div class="union-box">
-            <h4>Chairman — English Club</h4>
-            <p>College Students' Union</p>
+            <h4>Chairman — Language Club</h4>
+            <p>College Union</p>
             <small>Facilitating public speech clinics, literary seminars, and communicative forums.</small>
           </div>
         </div>
@@ -534,7 +559,7 @@
             </div>
             <div class="c-item card-tilt" data-cursor="LINKEDIN">
               <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener">Bishr Pottikkallu &nearr;</a>
+              <a href="https://linkedin.com/in/bishr-pottikkallu-832274372" target="_blank" rel="noopener">Bishr Pottikkallu &nearr;</a>
             </div>
             <div class="c-item card-tilt" data-cursor="INSTA">
               <span><i class="fa-brands fa-instagram"></i> Instagram</span>
@@ -588,7 +613,7 @@
       <div class="footlinks">
         <a href="mailto:bishrpottikkallu@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
         <a href="tel:+918848160877"><i class="fa-solid fa-phone"></i> Phone</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://linkedin.com/in/bishr-pottikkallu-832274372" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="https://www.instagram.com/bissh.r/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
         <a href="https://wa.me/918848160877" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         <!-- Floating WhatsApp Button -->

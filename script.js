@@ -2,6 +2,52 @@
    Muhammed Bishr — Interactive 3D Portfolio Logic (script.js)
    ============================================================ */
 
+// ---- Loading screen: hide when the page is ready, then announce 'mb-ready' ----
+(function () {
+  var loader = document.getElementById('page-loader');
+  var start = Date.now(), fired = false;
+  function ready() {
+    if (fired) return; fired = true;
+    document.body.classList.add('loaded');
+    document.dispatchEvent(new Event('mb-ready'));
+  }
+  function hide() {
+    var wait = Math.max(0, 900 - (Date.now() - start));      // show at least 0.9s
+    setTimeout(function () { if (loader) loader.classList.add('done'); ready(); }, wait);
+  }
+  if (!loader) { ready(); return; }
+  if (document.readyState === 'complete') hide(); else window.addEventListener('load', hide);
+  setTimeout(function () { loader.classList.add('done'); ready(); }, 5000);   // safety
+})();
+// ---- Built-in typewriter: used automatically if the Typed.js CDN file can't load ----
+if (typeof Typed === 'undefined') {
+  window.Typed = function (selector, o) {
+    var el = document.querySelector(selector); if (!el) return;
+    var strs = (o.strings || []).map(function (s) { return String(s).replace(/&nbsp;/g, '\u00a0'); });
+    var ts = o.typeSpeed || 80, bs = o.backSpeed || ts, bd = o.backDelay || 700;
+    var si = 0, ci = 0, del = false;
+    if (o.showCursor !== false) el.insertAdjacentHTML('afterend', '<span class="typed-cursor">|</span>');
+    (function tick() {
+      var s = strs[si];
+      if (!del) {
+        el.textContent = s.slice(0, ++ci);
+        if (ci < s.length) return setTimeout(tick, ts);
+        if (o.loop) { del = true; return setTimeout(tick, bd); }
+        if (o.onComplete) o.onComplete();
+      } else {
+        el.textContent = s.slice(0, --ci);
+        if (ci > 0) return setTimeout(tick, bs);
+        del = false; si = (si + 1) % strs.length; setTimeout(tick, 300);
+      }
+    })();
+  };
+}
+
+window.mbWhenReady = function (fn) {
+  if (document.body.classList.contains('loaded')) fn();
+  else document.addEventListener('mb-ready', fn, { once: true });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Year update
   const yearEl = document.getElementById('year');
@@ -234,8 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 12. Typed.js intro animation (kept last, and wrapped so it can never break the rest)
-  try {
+  // 12. Typed.js intro animation (starts after the loading screen; wrapped so it can never break the rest)
+  mbWhenReady(() => { try {
     const typeIt = (selector, text, next) => {
       new Typed(selector, {
         strings: [text],
@@ -263,5 +309,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } catch (err) {
     console.error('Typed animation failed:', err);
-  }
+  } });
+
+  // 13. Scroll reveal
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    const show = (el) => {
+      const d = el.classList.contains('delay') ? 150 : 0;
+      setTimeout(() => el.classList.add('in'), d);
+    };
+    if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach((el) => io.observe(el));
+    setTimeout(() => els.forEach((el) => el.classList.add('in')), 6000);   // safety net
+  })();
+
+  // 14. Animated counters: <span class="count" data-count="4" data-suffix="×">
+  (function () {
+    const items = document.querySelectorAll('.count');
+    if (!items.length) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function run(el) {
+      const target = parseFloat(el.dataset.count) || 0, suffix = el.dataset.suffix || '';
+      if (reduce) { el.textContent = target + suffix; return; }
+      const dur = 1600; let t0 = null;
+      function step(t) {
+        if (!t0) t0 = t;
+        const p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    mbWhenReady(() => {
+      if (!('IntersectionObserver' in window)) { items.forEach(run); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      items.forEach((el) => io.observe(el));
+    });
+  })();
 });
